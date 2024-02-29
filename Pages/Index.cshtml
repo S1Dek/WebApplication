@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Kontrahent Management";
+}
+
+<h1>Customer List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>NIP</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kontrahent in Model.Kontrahent)
+        {
+            <tr>
+                <td>@kontrahent.Id</td>
+                <td>@kontrahent.Name</td>
+                <td>@kontrahent.Address</td>
+                <td>@kontrahent.NIP</td>
+                <td>
+                    <a href="#" onclick="editCustomer(@kontrahent.Id)">Edit</a> |
+                    <a href="#" onclick="deleteCustomer(@kontrahent.Id)">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function editKontrahent(id) {
+        alert("Edytowano Kontrahenta with ID " + id);
+    }
+
+    function deleteKontrahent(id) {
+        alert("Usunięto Kontrahenta o ID " + id);
+    }
+</script>
