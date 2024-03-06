@@ -6,12 +6,12 @@ using WebApplication1;
 
 [Route("api/[controller]")]
 [ApiController]
-public class KontrahentController : ControllerBase
+public class HomeController : ControllerBase
 {
     private readonly AppDbContext dbcontext;
 
     // Konstruktor kontrolera, wstrzykujący kontekst bazy danych przez Dependency Injection
-    public KontrahentController(AppDbContext context)
+    public HomeController(AppDbContext context)
     {
         dbcontext = context;
     }
